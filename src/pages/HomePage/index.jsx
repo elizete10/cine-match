@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const HomePage = () => {
     return (
-        <main className="min-h-dvh bg-linear-to-r from-stone-900 to-stone-950 flex items-center justify-center p-4">
+        <main className="min-h-dvh bg-linear-to-r from-stone-800 to-stone-950 flex items-center justify-center p-4">
             <div className="w-full max-w-4xl text-center space-y-8">
                 <header className="space-y-4">
                     <h1 className="text-6xl md:text-7xl text-neutral-50 font-bold tracking-tight">Cine Match</h1>
