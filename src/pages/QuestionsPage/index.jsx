@@ -75,7 +75,7 @@ export const QuestionsPage = () => {
 
         try {
             // Requisição de submissão
-            const response = await axios.post("/answers", {
+            await axios.post("/answers", {
                 questionId,
                 answer: [answer]
             }, {
@@ -132,7 +132,7 @@ export const QuestionsPage = () => {
     if (isLoading) {
         return (
             <main className="min-h-screen flex items-center justify-center bg-amber-50">
-                <p className="text-xl text-neutral-600">Carregando questões...</p>
+                <p className="text-xl text-neutral-800">Carregando questões...</p>
             </main>
         )
     }
@@ -149,16 +149,16 @@ export const QuestionsPage = () => {
     const progressPercentage = ((currentQuestion + 1) / questions.length) * 100
 
     return (
-        <div className="min-h-screen bg-linear-to-br from-stone-950 to-purple-950 flex flex-col">
+        <div className="min-h-screen bg-linear-to-br from-stone-950 to-indigo-950 flex flex-col">
             {/* Progress Bar */}
             <div className="max-w-4xl mx-auto w-full pt-8 pb-4 px-4">
                 <div className="mb-4">
                     <p className="text-white text-center font-semibold mb-2">
                         Pergunta {currentQuestion + 1} de {questions.length}
                     </p>
-                    <div className="w-full bg-purple-600 rounded-full h-3 overflow-hidden">
+                    <div className="w-full bg-indigo-800 rounded-full h-3 overflow-hidden">
                         <div
-                            className="bg-linear-to-r from-blue-800 h-full transition-all duration-500 ease-out"
+                            className="bg-linear-to-r from-indigo-400 h-full transition-all duration-500 ease-out"
                             style={{ width: `${progressPercentage}%` }}
                         />
                     </div>
@@ -190,7 +190,7 @@ export const QuestionsPage = () => {
                                 disabled={isSubmitting} // Desabilita durante o envio
                                 className={`p-6 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 
                                     ${selectedAnswer === option.value
-                                    ? "bg-linear-to-r from-purple-600 to-blue-800 transition-colors text-white shadow-xl scale-105"
+                                    ? "bg-linear-to-r from-violet-800 to-indigo-800 transition-colors text-white shadow-xl scale-105"
                                     : "bg-white/10 text-white hover:bg-white/20 shadow-md hover:shadow-lg"
                                     }`}
                             >
@@ -225,7 +225,7 @@ export const QuestionsPage = () => {
                         className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 
                             ${!selectedAnswer || isSubmitting
                             ? "bg-gray-700 text-gray-500 cursor-not-allowed"
-                            : "bg-linear-to-r from-blue-600 to-purple-800 text-white hover:from-blue-700 hover:to-purple-700 transition-colors shadow-lg hover:shadow-xl"
+                            : "bg-linear-to-r from-indigo-800 to-violet-800 text-white hover:from-indigo-700 hover:to-violet-800 transition-colors shadow-lg hover:shadow-xl"
                             }`}
                     >
                         {isSubmitting ? (

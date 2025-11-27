@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Logo } from "../../assets/Logo";
 
 export const HomePage = () => {
     const navigate = useNavigate()
@@ -21,17 +22,22 @@ export const HomePage = () => {
     }
 
     return (
-        <main className="min-h-dvh bg-linear-to-r from-stone-950 to-purple-900 flex items-center justify-center p-4">
+        <main className="min-h-dvh bg-linear-to-r from-stone-950 to-indigo-950 flex items-center justify-center p-4">
             <div className="w-full max-w-4xl text-center space-y-8">
                 <header className="space-y-4">
                     <h1 className="text-6xl md:text-7xl text-neutral-50 font-bold tracking-tight">Cine Match</h1>
-                    <h2 className="text-2xl md:text-3xl font-medium   text-indigo-300 ">
+                    <h2 className="text-2xl md:text-3xl font-medium   text-indigo-400 ">
                         Escolher é difícil, assistir não precisa ser!
                     </h2>
                 </header>
 
+                <figure className="flex w-full items-center justify-center">
+                    <img src="/logo.png" className="object-contain w-60 h-6w-60" />
+                </figure>
+                
+
                 <button onClick={handleStart}
-                    className="inline-flex items-center px-8 py-4 bg-linear-to-r from-violet-600 to-violet-950 hover:scale-105 text-neutral-50 text-xl font-semibold rounded-lg shadow-lg shadow-violet-500 transform transition-all duration-300 hover:shadow-xl">
+                    className="inline-flex items-center px-8 py-4 bg-linear-to-r from-indigo-800 to-violet-800 hover:scale-105 text-neutral-50 text-xl font-semibold rounded-lg shadow-lg shadow-violet-500 transform transition-all duration-300 hover:shadow-xl">
                     Começar Agora
                 </button>
 
